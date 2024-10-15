@@ -10,10 +10,10 @@ import { Single } from "./pages/single";  // Verifica que el archivo single.js e
 import { Categories } from "./pages/Categories";  // Verifica que el archivo Categories.js exista
 import injectContext from "./store/appContext";  // Verifica que appContext.js exista
 
-import { Navbar } from "./components/navbar";  // Verifica que el archivo navbar.js exista
-import { Footer } from "./components/footer";  // Verifica que el archivo footer.js exista
+import { Navbar } from "./components/navbar";  
+import { Footer } from "./components/footer";  
 
-const Layout = () => {g
+const Layout = () => {
     const basename = process.env.BASENAME || "";
 
     if (!process.env.BACKEND_URL || process.env.BACKEND_URL === "") return <BackendURL />;
