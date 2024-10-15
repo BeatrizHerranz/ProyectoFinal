@@ -1,3 +1,4 @@
+# src/api/routes.py
 """
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
@@ -11,12 +12,19 @@ api = Blueprint('api', __name__)
 # Allow CORS requests to this API
 CORS(api)
 
-
+# Existing hello endpoint
 @api.route('/hello', methods=['POST', 'GET'])
 def handle_hello():
-
     response_body = {
         "message": "Hello! I'm a message that came from the backend, check the network tab on the google inspector and you will see the GET request"
     }
-
     return jsonify(response_body), 200
+
+# New endpoint for categories
+@api.route('/api/categorias', methods=['GET'])
+def get_categorias():
+    categorias = {
+        "categorias": ["Chicas", "Niños", "Bebés"],
+        "subcategorias": ["Accesorios", "Ropa", "Complementos"]
+    }
+    return jsonify(categorias), 200

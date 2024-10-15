@@ -1,7 +1,16 @@
-/*
-    home.css: This website contains selectors only used in home.css
+/* scr/front/styles/home.css */
 
-    All pages share the styles on index.css but you should create 
-    one more css for each page that will contain the selected used 
-    on that page only (the ones not reused in other pages).
-*/
+h2, h3 {
+    color: #333;
+    font-family: 'Arial', sans-serif;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 5px 0;
+    font-size: 18px;
+}

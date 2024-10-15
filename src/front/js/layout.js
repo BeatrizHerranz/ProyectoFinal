@@ -1,23 +1,22 @@
+// src/front/js/layout.js
+
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import ScrollToTop from "./component/scrollToTop";
-import { BackendURL } from "./component/backendURL";
+import ScrollToTop from "./components/scrollToTop";  // Asegúrate de que esta ruta sea correcta
+import { BackendURL } from "./components/backendURL";  // Este archivo debería existir
+import { Home } from "./pages/home";  // Verifica que el archivo home.js exista
+import { Demo } from "./pages/demo";  // Verifica que el archivo demo.js exista
+import { Single } from "./pages/single";  // Verifica que el archivo single.js exista
+import { Categories } from "./pages/Categories";  // Verifica que el archivo Categories.js exista
+import injectContext from "./store/appContext";  // Verifica que appContext.js exista
 
-import { Home } from "./pages/home";
-import { Demo } from "./pages/demo";
-import { Single } from "./pages/single";
-import injectContext from "./store/appContext";
+import { Navbar } from "./components/navbar";  // Verifica que el archivo navbar.js exista
+import { Footer } from "./components/footer";  // Verifica que el archivo footer.js exista
 
-import { Navbar } from "./component/navbar";
-import { Footer } from "./component/footer";
-
-//create your first component
-const Layout = () => {
-    //the basename is used when your project is published in a subdirectory and not in the root of the domain
-    // you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
+const Layout = () => {g
     const basename = process.env.BASENAME || "";
 
-    if(!process.env.BACKEND_URL || process.env.BACKEND_URL == "") return <BackendURL/ >;
+    if (!process.env.BACKEND_URL || process.env.BACKEND_URL === "") return <BackendURL />;
 
     return (
         <div>
@@ -28,6 +27,7 @@ const Layout = () => {
                         <Route element={<Home />} path="/" />
                         <Route element={<Demo />} path="/demo" />
                         <Route element={<Single />} path="/single/:theid" />
+                        <Route element={<Categories />} path="/categories" />  {/* Ruta para Categorías */}
                         <Route element={<h1>Not found!</h1>} />
                     </Routes>
                     <Footer />
