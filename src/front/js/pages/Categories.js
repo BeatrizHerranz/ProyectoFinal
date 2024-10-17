@@ -1,19 +1,22 @@
 // src/front/js/pages/Categories.js
 
 import React, { useEffect, useState } from 'react';
-import { getCategorias } from '../services/api';
+import { getCategorias } from '../services/api';  // Llamada a la API
+import CategoryList from '../components/CategoryList';  // Lista de categorías
+import CategoryFilter from '../components/CategoryFilter';  // Filtro de subcategorías
+import '../../styles/categories.css';  // Estilos
 
 export const Categories = () => {
     const [categorias, setCategorias] = useState([]);
-    const [subcategorias, setSubcategorias] = useState([]);
+    const [selectedCategory, setSelectedCategory] = useState(null);
 
+    // Llamada a la API para obtener categorías
     useEffect(() => {
         const fetchCategorias = async () => {
             try {
-                const data = await getCategorias(); // Llamada a la función de la API
+                const data = await getCategorias();
                 if (data) {
-                    setCategorias(data.categorias); // Asumiendo que 'categorias' es la respuesta
-                    setSubcategorias(data.subcategorias); // Asumiendo que 'subcategorias' es parte de la respuesta
+                    setCategorias(data.categorias);  // Asignamos categorías desde la API
                 }
             } catch (error) {
                 console.error("Error fetching categories:", error);
@@ -23,28 +26,22 @@ export const Categories = () => {
         fetchCategorias(); // Ejecuta la llamada a la API cuando el componente se monta
     }, []);
 
+    const handleCategorySelect = (nombreCategoria) => {
+        const categoria = categorias.find(cat => cat.nombre === nombreCategoria);
+        setSelectedCategory(categoria);  // Establecemos la categoría seleccionada
+    };
+
     return (
-        <div>
+        <div className="categories-container">
             <h2>Categorías</h2>
-            <ul>
-                {categorias.length > 0 ? (
-                    categorias.map((categoria, index) => (
-                        <li key={index}>{categoria}</li>
-                    ))
-                ) : (
-                    <p>No hay categorías disponibles</p>
-                )}
-            </ul>
-            <h3>Subcategorías</h3>
-            <ul>
-                {subcategorias.length > 0 ? (
-                    subcategorias.map((subcategoria, index) => (
-                        <li key={index}>{subcategoria}</li>
-                    ))
-                ) : (
-                    <p>No hay subcategorías disponibles</p>
-                )}
-            </ul>
+            <CategoryList categorias={categorias} onCategorySelect={handleCategorySelect} />
+
+            {selectedCategory && (
+                <>
+                    <h3>Subcategorías</h3>
+                    <CategoryFilter subcategorias={selectedCategory.subcategorias} />
+                </>
+            )}
         </div>
     );
 };

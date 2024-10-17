@@ -1,16 +1,35 @@
 /* scr/front/styles/home.css */
-
-h2, h3 {
-    color: #333;
-    font-family: 'Arial', sans-serif;
+body {
+    background-color: #dfdac5;
+}
+.text-center {
+    text-align: center;
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
+.carousel {
+    display: flex; /* O usa flexbox o grid según prefieras */
+    overflow: auto; /* Esto permitirá un desplazamiento lateral si hay muchas imágenes */
 }
 
-li {
-    margin: 5px 0;
-    font-size: 18px;
+.carousel-image {
+    margin: 0 10px; /* Espaciado entre imágenes */
+}
+
+.featured-products {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los productos se distribuyan en varias filas */
+    justify-content: center; /* Centra los productos */
+}
+
+.product-card {
+    border: 1px solid #ddd; /* Añade un borde */
+    border-radius: 5px; /* Esquinas redondeadas */
+    margin: 15px; /* Espaciado entre tarjetas */
+    padding: 10px; /* Espaciado interno */
+    width: 200px; /* Ancho fijo */
+}
+
+.product-card img {
+    width: 100%; /* Asegura que la imagen ocupe el 100% del ancho de la tarjeta */
+    height: auto; /* Mantiene la proporción de la imagen */
 }

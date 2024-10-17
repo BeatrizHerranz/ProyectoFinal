@@ -26,8 +26,10 @@ else:
     app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:////tmp/test.db"
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-MIGRATE = Migrate(app, db, compare_type=True)
+
+# Initialize database and migrations
 db.init_app(app)
+MIGRATE = Migrate(app, db, compare_type=True)
 
 # Add the admin
 setup_admin(app)

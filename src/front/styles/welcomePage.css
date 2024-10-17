@@ -1,0 +1,15 @@
+/* src/front/styles/welcomePage.css */
+.welcome-page {
+    padding: 20px;
+  }
+  
+  .welcome-page h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .welcome-page h2 {
+    margin-top: 40px;
+    text-align: center;
+  }
+  

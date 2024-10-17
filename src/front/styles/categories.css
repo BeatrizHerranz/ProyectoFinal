@@ -1,0 +1,31 @@
+/* src/front/styles/categories.css */
+
+.categories-container {
+    padding: 20px;
+}
+
+.category-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.category-item {
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.category-item:hover {
+    background-color: #e2e6ea;
+}
+
+.category-filter ul {
+    padding-left: 20px;
+}
+
+.category-filter li {
+    padding: 5px 0;
+}

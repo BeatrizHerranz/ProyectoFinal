@@ -1,0 +1,12 @@
+/* src/front/styles/login.css */
+.login-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+}
+.error-text {
+    color: red;
+    font-size: 0.9em;
+}

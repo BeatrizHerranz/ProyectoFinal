@@ -1,3 +1,41 @@
+.carousel {
+    display: flex;
+    overflow: hidden;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.carousel-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.featured-products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.product-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #f56;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
 /* 
     General Styles used on every website (Don't Repeat Yourself)
 */

@@ -1,0 +1,36 @@
+/* src/front/styles/productDetail.css */
+
+.product-detail {
+    display: flex;
+    margin: 20px;
+}
+
+.product-image {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.product-image img {
+    max-width: 100%;
+}
+
+.product-info {
+    flex: 2;
+}
+
+.purchase-options {
+    margin-top: 10px;
+}
+
+.related-products {
+    margin-top: 30px;
+}
+
+.related-products ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.related-products li {
+    margin: 10px 0;
+}

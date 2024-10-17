@@ -1,0 +1,38 @@
+/* src/front/styles/featuredProducts.css */
+.featured-products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .product-card {
+    border: 1px solid #ccc;
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .product-card img {
+    width: 100%;
+    max-height: 150px;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  
+  .product-card h3 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+  }
+  
+  .product-card p {
+    font-size: 1em;
+    margin-bottom: 10px;
+  }
+  
+  .product-card button {
+    background-color: #ff4081;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  

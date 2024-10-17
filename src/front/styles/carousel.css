@@ -1,0 +1,12 @@
+/* src/front/styles/carousel.css */
+.carousel {
+    display: flex;
+    overflow: auto;
+    gap: 10px;
+  }
+  
+  .carousel-item img {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+  

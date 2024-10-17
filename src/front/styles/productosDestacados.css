@@ -1,0 +1,32 @@
+.productos-destacados {
+    text-align: center;
+}
+
+.carousel {
+    display: flex;
+    overflow-x: auto;
+}
+
+.producto-item {
+    margin: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 200px;
+}
+
+.producto-item img {
+    width: 100%;
+    height: auto;
+}
+
+button {
+    background-color: #008CBA;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #005f6b;
+}
