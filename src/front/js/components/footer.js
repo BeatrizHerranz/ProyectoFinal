@@ -1,56 +1,45 @@
 import React from "react";
+import { Link } from "react-router-dom"; // Asegúrate de tener react-router-dom instalado
 
-export const Footer = () => (
-  <footer className="footer mt-auto py-3">
-    <div className="footer-container">
-      <div className="footer-section">
-        <h4>Compra</h4>
-        <ul>
-          <li><a href="#">Regalos</a></li>
-          <li><a href="#">Tarjetas de regalo</a></li>
-          <li><a href="#">Tendencias</a></li>
-        </ul>
+const Footer = () => {
+  return (
+    <footer className="bg-light text-center text-lg-start mt-5">
+      <div className="container p-4">
+        <div className="row">
+          <div className="col-lg-6 col-md-12 mb-4">
+            <h5 className="text-uppercase">Tu Empresa</h5>
+            <p>
+              Aquí puedes incluir una breve descripción de tu empresa o sitio web. Ofrecemos los mejores productos y servicios para ti.
+            </p>
+          </div>
+
+          <div className="col-lg-3 col-md-6 mb-4">
+            <h5 className="text-uppercase">Enlaces</h5>
+            <ul className="list-unstyled">
+              <li><Link to="/">Inicio</Link></li>
+              <li><Link to="/productos">Productos</Link></li>
+              <li><Link to="/sobre-nosotros">Sobre Nosotros</Link></li>
+              <li><Link to="/contacto">Contacto</Link></li>
+            </ul>
+          </div>
+
+          <div className="col-lg-3 col-md-6 mb-4">
+            <h5 className="text-uppercase">Síguenos</h5>
+            <ul className="list-unstyled">
+              <li><a href="#" className="text-dark"><i className="fab fa-facebook" /> Facebook</a></li>
+              <li><a href="#" className="text-dark"><i className="fab fa-instagram" /> Instagram</a></li>
+              <li><a href="#" className="text-dark"><i className="fab fa-twitter" /> Twitter</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
 
-      <div className="footer-section">
-        <h4>Vende</h4>
-        <ul>
-          <li><a href="#">Vender en la tienda</a></li>
-          <li><a href="#">Hazte vendedor</a></li>
-        </ul>
+      <div className="text-center p-3 bg-light">
+        <p>© 2024 TuTienda. Todos los derechos reservados.</p>
+        <p><Link to="/politica-de-cookies">Política de cookies</Link></p>
       </div>
+    </footer>
+  );
+};
 
-      <div className="footer-section">
-        <h4>Acerca de</h4>
-        <ul>
-          <li><a href="#">Nosotros</a></li>
-          <li><a href="#">Empleo</a></li>
-          <li><a href="#">Blog</a></li>
-        </ul>
-      </div>
-
-      <div className="footer-section">
-        <h4>Ayuda</h4>
-        <ul>
-          <li><a href="#">Centro de ayuda</a></li>
-          <li><a href="#">Política de privacidad</a></li>
-          <li><a href="#">Términos y condiciones</a></li>
-        </ul>
-      </div>
-
-      <div className="footer-social">
-        <h4>Síguenos</h4>
-        <ul className="social-icons">
-          <li><a href="#"><i className="fa fa-facebook" /></a></li>
-          <li><a href="#"><i className="fa fa-instagram" /></a></li>
-          <li><a href="#"><i className="fa fa-twitter" /></a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div className="footer-bottom text-center">
-      <p>© 2024 TuTienda. Todos los derechos reservados.</p>
-      <p><a href="#">Política de cookies</a></p>
-    </div>
-  </footer>
-);
+export default Footer;
